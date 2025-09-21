@@ -20,6 +20,9 @@ This project focuses on predicting protein subcellular localization using Gene O
     ├── adj_matrix.py     # Adjacency matrix generation
     └── Feat_generator.py # Feature vector generation
 ```
+## Datasets
+
+The datasets used to train and test the models are located in the `Datasets` folder. All the files in this folder are also available on Kaggle, except for the dataset `Actual_Train_GO.parquet`, which is only available on Kaggle. You can access `Actual_Train_GO.parquet` and other related datasets here: [gene-ontology](https://www.kaggle.com/datasets/harshac1306/gene-ontology).
 
 ## Features
 
