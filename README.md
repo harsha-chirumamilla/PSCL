@@ -45,33 +45,6 @@ The system predicts protein locations among the following cellular components:
 - Peroxisome
 
 ## Technical Details
-
-### Data Processing and Feature Extraction
-
-1. **Adjacency Matrix Construction**
-   - Matrix Size: 
-     - Actual Dataset: 37,433 × 37,433
-     - Independent Dataset: 15,677 × 15,677
-   - Represents relationships between GO terms
-
-2. **Node Embedding**
-     - Actual Dataset: 37,433 × 128 matrix
-     - Independent Dataset: 15,677 × 128 matrix
-
-3. **Dimensionality Reduction**
-   - Method: Principal Component Analysis (PCA)
-   - Final Output:
-     - Actual Dataset: Vector length 37,433
-     - Independent Dataset: Vector length 15,677
-
-
-4. **Multi-label Generator**
-   - Uses dynamic probability threshold
-   - Threshold options:
-     - α × max(probabilities)
-     - α × mean(probabilities)
-     - where α ∈ (0,1)
-
 ### Evaluation Metrics
 - Strict accuracy (exact match)
 - Relaxed accuracy
@@ -89,32 +62,6 @@ The system predicts protein locations among the following cellular components:
 - PyArrow
 - Matplotlib
 
-## Dataset Structure
-
-The project utilizes two main datasets:
-
-### 1. Actual Dataset (DeepLoc 2.0)
-- Source: Denmark's Technical University
-- Training Set:
-  - 28,303 protein sequences
-  - 11 locations
-- Test Set:
-  - 1,685 sequences
-  - 8 locations
-
-### 2. Independent Dataset (Plant-mSubP)
-- Source: UniProtKB (25% CD-HIT similarity cutoff)
-- Training Set:
-  - Total: 3,553 sequences
-  - Single-labeled: 3,231 sequences
-  - Dual-labeled: 322 sequences
-  - 11 locations
-- Test Set:
-  - Total: 626 sequences
-  - Single-labeled: 592 sequences
-  - Dual-labeled: 34 sequences
-  - 11 locations
-
 ## Model Performance
 
 The models achieve the following performance metrics:
@@ -125,7 +72,7 @@ The models achieve the following performance metrics:
 1. Process GO term relationships to create adjacency matrices
 2. Generate feature vectors using node2vec
 3. Train the model using the provided notebooks
-4. Evaluate performance using the analysis notebooks
+4. Evaluate performance using dynamic thresholding approach with the threshold defined as α × max(probabilities), where α ∈ (0,1)
 
 Note: Detailed instructions for each step are provided in the respective notebooks.
 
