@@ -32,28 +32,12 @@ The datasets used to train and test the models are located in the `Datasets` fol
 - Feature generation using node2vec for graph embeddings
 - Deep neural network models for prediction
 
-## Cellular Locations Predicted
-
-The system predicts protein locations among the following cellular components:
-- Membrane
-- Cytoplasm
-- Nucleus
-- Extracellular
-- Cell membrane
-- Mitochondrion
-- Plastid
-- Endoplasmic reticulum
-- Lysosome/Vacuole
-- Golgi apparatus
-- Peroxisome
-
 ## Technical Details
 ### Evaluation Metrics
 - Strict accuracy (exact match)
 - Relaxed accuracy
 - Per-location accuracy
-- Matthews Correlation Coefficient
-
+  
 ## Dependencies
 
 - TensorFlow/Keras
@@ -68,8 +52,8 @@ The system predicts protein locations among the following cellular components:
 ## Model Performance
 
 The models achieve the following performance metrics:
-- Strict Accuracy: ~44.69% (Actual GO)
-- Relaxed Accuracy: ~91.2% (Actual GO)
+- Strict Accuracy: ~44.69% (Actual dataset)
+- Relaxed Accuracy: ~91.2% (Actual Dataset)
 
 ## Usage
 1. Process GO term relationships to create adjacency matrices
